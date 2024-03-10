@@ -1,13 +1,9 @@
-
-<%= form_with(model: flat, local: true) do |form| %>
-  <!-- Your existing form fields -->
-
-  <div class="field">
-    <%= form.label :picture %>
-    <%= form.file_field :picture %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<%= simple_form_for @flat do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :price_per_night %>
+  <%= f.input :number_of_guests %>
+  <%= f.input :picture_url %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
