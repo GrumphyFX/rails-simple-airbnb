@@ -1,9 +1,9 @@
 <%= simple_form_for @flat do |f| %>
-  <%= f.input :name %>
-  <%= f.input :address %>
-  <%= f.input :description %>
-  <%= f.input :price_per_night %>
-  <%= f.input :number_of_guests %>
-  <%= f.input :picture_url %>
+  <%= f.input :name, input_html: { class: 'form-control' } %>
+  <%= f.input :address, input_html: { class: 'form-control' } %>
+  <%= f.input :description, input_html: { class: 'form-control' } %>
+  <%= f.input :price_per_night, input_html: { class: 'form-control' } %>
+  <%= f.input :number_of_guests, input_html: { class: 'form-control' } %>
+  <%= f.input :picture_url, input_html: { class: 'form-control' } %>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
