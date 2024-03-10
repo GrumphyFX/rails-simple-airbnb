@@ -1,7 +1,8 @@
-class FlatsController < ApplicationController
     class FlatsController < ApplicationController
         def index
-          @flats = Flat.all
+            @query = params[:query]
+            @flats = Flat.all
+            @flats = @flats.where("name ILIKE ? OR address ILIKE ? OR description ILIKE ?", "%#{@query}%", "%#{@query}%", "%#{@query}%") if @query.present?
         end
       
         def show
@@ -45,5 +46,4 @@ class FlatsController < ApplicationController
         def flat_params
           params.require(:flat).permit(:name, :address, :description, :price_per_night, :number_of_guests)
         end
-      end
-end
+    end

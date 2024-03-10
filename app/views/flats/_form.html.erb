@@ -1,0 +1,13 @@
+
+<%= form_with(model: flat, local: true) do |form| %>
+  <!-- Your existing form fields -->
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.file_field :picture %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

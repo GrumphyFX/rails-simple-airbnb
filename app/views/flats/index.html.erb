@@ -1,9 +1,12 @@
-<h1>All Flats</h1>
+<h1>All our Flats (<%= @flats.count %>)</h1>
 
 <div class="row">
   <% @flats.each do |flat| %>
     <div class="col-md-4">
       <div class="card mb-4">
+        <% if flat.picture_url.present? %>
+          <%= image_tag flat.picture_url, class: "card-img-top" %>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= flat.name %></h5>
           <p class="card-text"><%= flat.address %></p>
@@ -11,7 +14,7 @@
           <p class="card-text"><i class="fas fa-user"></i> <%= flat.number_of_guests %> guests</p>
           <%= link_to 'Show', flat, class: 'btn btn-primary' %>
           <%= link_to 'Edit', edit_flat_path(flat), class: 'btn btn-secondary' %>
-          <%= link_to 'Delete', flat, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          <%= link_to 'Remove', flat, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         </div>
       </div>
     </div>
